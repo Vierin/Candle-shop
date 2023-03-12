@@ -20,7 +20,6 @@ export class Slider {
 
     
     bind() {
-        console.log(this.options.thumbs);
         const swiper = new Swiper(this.swiper, {
             watchSlidesProgress: true,
             slidesPerView: this.options.slidesPerView ? +this.options.slidesPerView : 1,

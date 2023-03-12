@@ -1,20 +1,22 @@
 .header {
-    display: flex;
     width: 100%;
-    justify-content: space-between;
-    padding: 0 35px;
     border-bottom: 1px solid $color-dark;
     height: $header;
-    position: relative;
     z-index: 5;
-    position: sticky;
-    transition: 0.3s $easing;
+    position: relative;
+    transition: background 0.5s $easing;
 
-    &.sticky {
-        position: fixed;
-        top: 0;
+    @include hover {
         background: $color-white;
-        animation: smoothScroll .4s forwards;
+    }
+
+    &__wrap {
+        position: relative;
+        height: $header;
+        padding: 0 35px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
 
     &__logo {

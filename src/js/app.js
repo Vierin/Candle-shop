@@ -1,8 +1,12 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger.min.js";
+import { ScrollSmoother } from "gsap/dist/ScrollSmoother.min.js";
 
 import { Menu } from "./components/Menu.js";
 import { Slider } from "./components/Slider.js";
 import { Gallery } from "./components/Gallery.js";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export class App {
     constructor() {
         this.load();
@@ -14,6 +18,12 @@ export class App {
             const gallery = new Gallery(document.querySelector('[data-component="Gallery"]'));
         }
         
+        // smooth scroll
+       
+        let smoother = ScrollSmoother.create({
+            smooth: 2,   // seconds it takes to "catch up" to native scroll position
+            effects: true // look for data-speed and data-lag attributes on elements and animate accordingly
+          });
 
         const menu = new Menu(document.querySelector('[data-component="Menu"]'));
 
@@ -37,12 +47,11 @@ export class App {
             document.documentElement.classList.remove('is-cart-open');
         })
 
-        // header sticky
+        // header sticky 
         const header = document.querySelector('.header');
         const offsetTop = header.offsetTop;
-
+        
         window.addEventListener('scroll', () => {
-            console.log(window.pageYOffset, offsetTop);
             if(window.pageYOffset > offsetTop) {
                 header.classList.add('sticky');
             } else {

@@ -375,29 +375,29 @@ input:focus {
 }
 
 .header {
+  width: 100%;
+  border-bottom: 1px solid #191915;
+  height: 120px;
+  z-index: 5;
+  position: relative;
+  -webkit-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
+}
+.mod_no-touchevents .header:hover {
+  background: #fff;
+}
+.header__wrap {
+  position: relative;
+  height: 120px;
+  padding: 0 35px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0 35px;
-  border-bottom: 1px solid #191915;
-  height: 120px;
-  position: relative;
-  z-index: 5;
-  position: sticky;
-  -webkit-transition: 0.3s ease-out;
-  -o-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
-}
-.header.sticky {
-  position: fixed;
-  top: 0;
-  background: #fff;
-  -webkit-animation: smoothScroll 0.4s forwards;
-  animation: smoothScroll 0.4s forwards;
 }
 .header__logo {
   height: 100%;
@@ -522,6 +522,8 @@ input:focus {
   -ms-flex-pack: center;
   justify-content: center;
   text-transform: uppercase;
+  position: relative;
+  z-index: 5;
 }
 
 .menu {
@@ -678,6 +680,10 @@ input:focus {
 }
 .section--hero {
   margin: -120px auto 0;
+}
+.section--account {
+  max-width: 1340px;
+  margin: 0 auto;
 }
 .section--form {
   display: -webkit-box;
@@ -2394,4 +2400,78 @@ swiper-container .swiper-notification {
 .form button {
   width: 100%;
   margin-top: 10px;
+}
+
+.account {
+  margin: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.account__head {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  margin-bottom: 70px;
+}
+.account__out {
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.account__out::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: #6a6a6a;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  -o-transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+}
+.mod_no-touchevents .account__out:hover::after {
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+}
+.account h1 {
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.account h5 {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #6a6a6a;
+  padding-bottom: 10px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #dadada;
+}
+.account__orders {
+  -ms-flex-preferred-size: 70%;
+  flex-basis: 70%;
+}
+.account__address {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  margin-bottom: 60px;
+}
+.account__content {
+  margin-bottom: 32px;
 }
