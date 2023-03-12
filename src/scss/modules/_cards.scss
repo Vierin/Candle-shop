@@ -1,0 +1,27 @@
+.cards {
+
+    .sort + & {
+        padding-top: 20px;
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: vw(30);
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+
+        .cards--center & {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__more {
+        display: flex;
+        align-items: center;
+        margin: 80px auto 0;
+        width: fit-content;
+    }
+}

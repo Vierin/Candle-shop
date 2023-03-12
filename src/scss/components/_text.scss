@@ -1,0 +1,13 @@
+.text {
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    // sizes
+    &--xs {
+        font-size: vw(12);
+    }
+
+    &--s {
+        font-size: vw(22);
+    }
+}

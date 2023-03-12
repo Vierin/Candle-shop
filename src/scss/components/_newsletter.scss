@@ -1,0 +1,17 @@
+.newsletter {
+    margin-top: 18px;
+
+    input[type="email"] {
+        padding: 12px 14px;
+        border: 1px solid $color-gray-light;
+        color: $color-gray;
+    }
+
+    input[type="submit"] {
+        padding: 14px 28px;
+        color: $color-white;
+        background: $color-black;
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+}

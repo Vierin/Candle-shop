@@ -5,13 +5,20 @@ $color-gray-light: #F1F1F1;
 $color-violet: #5D009F;
 $color-violet-2: #8E27D8;
 $color-red: #E75656;
-$color-dark: #0E0E0E;
+
 $color-blue: #3AADCC;
 
+// offsets
 $padding: 72px;
 
 $easing: ease-out;
 $elastic: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+
+//candle
+$color-pale: #EEECE9;
+$color-dark: #191915;
+$color-gray: #6a6a6a;
+$color-gray-light: #dadada;
 
 //sizes
 $size-hd: 1600px;
@@ -48,4 +55,22 @@ $size-min: 320px;
     } @else if $point == "ipad-pro" {
         @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) { @content; }
     }
+}
+
+@function vw($size, $bp: desktop, $max: true) {
+    $layouts: (
+        desktop: 1400,
+        tablet: 768,
+        phone: 375,
+    );
+
+    @if map-has-key($layouts, $bp) {
+        @return calc(strip-units($size) / map-get($layouts, $bp) * 100vw);
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$bp}`.";
+    }
+}
+
+@function strip-units($value) {
+    @return calc($value / ($value * 0 + 1));
 }

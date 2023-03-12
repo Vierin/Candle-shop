@@ -1,0 +1,30 @@
+.amount {
+    margin: 24px 0;
+    border: 1px solid $color-gray-light;
+    width: fit-content;
+
+    .cart & {
+        display: block;
+    }
+
+    button {
+        padding: 10px 20px;
+
+        .cart & {
+            padding: 7px 12px;
+            font-size: 12px;
+        }
+    }
+
+    input {
+        max-width: 35px;
+        text-align: center;
+        font-size: 15px;
+        text-align: center;
+
+        .cart & {
+            font-size: 14px;
+            max-width: 20px;
+        }
+    }
+}

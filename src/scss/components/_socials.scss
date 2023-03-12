@@ -1,0 +1,36 @@
+.socials {
+    display: flex;
+
+    .footer & {
+        margin-top: 45px;
+    }
+
+    li {
+        margin: 0 5px;
+
+        a {
+            padding: 3px;
+
+            svg {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &--menu {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 1px solid rgba($color-dark, 0.3);
+
+        a {
+            display: flex;
+        }
+    }
+}

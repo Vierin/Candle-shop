@@ -1,0 +1,37 @@
+.review {
+    font-size: 14px;
+    display: flex;
+    margin: 5px 0;
+    justify-content: center;
+
+    .product & {
+        justify-content: flex-start;
+    }
+
+    &__stars {
+        display: flex;
+        margin-right: 8px;
+        font-size: 14px;
+
+        span {
+            display: block;
+
+            &::after {
+                font-family: "Font Awesome 5 Free";
+                content: "\f005";
+            }
+
+            &.half {
+                &::after {
+                    content: "\f5c0";
+                }
+            }
+
+            &.full {
+                &:after {
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}

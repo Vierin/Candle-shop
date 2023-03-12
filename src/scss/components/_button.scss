@@ -1,0 +1,35 @@
+.button {
+    position: relative;
+    min-height: vw(42);
+    border: 1px solid $color-black;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: $color-black;
+        z-index: 0;
+        transition: transform 0.5s $easing;
+        transform-origin: left;
+    }
+
+    &__text {
+        position: relative;
+        z-index: 3;
+        text-transform: uppercase;
+        color: $color-white;
+        padding: 14px 28px;
+        transition: color 0.5s $easing;
+    }
+
+    @include hover {
+        &::after {
+            transform: scaleX(0);
+            transform-origin: right;
+        }
+
+        .button__text {
+            color: $color-black;
+        }
+    }
+}

@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+// dimensions
+$header: 120px;
+$info: 45px;
+
 html,
 body {
     margin: 0;
@@ -9,39 +13,41 @@ body {
     overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    background: $color-gray-light;
+    background: $color-white;
 
     &::-webkit-scrollbar {
         display: none;
     }
+}
 
-    &.is-scrolling {
+html {
+    &.is-menu-open,
+    &.is-cart-open {
         overflow: hidden;
     }
 }
 
-.main-curtain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: $color-violet;
-    z-index: 10;
-}
+body {
+    position: relative;
 
-.js-morph {
-    .mask {
-        display: none;
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        background: rgba($color-black, 0.6);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s $easing;
     }
 
-    overflow: visible;
-}
-
-
-html.is-menu-open,
-html.is-video-open {
-    overflow: hidden;
+    .is-menu-open &,
+    .is-cart-open & {
+        &:after {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
 }
 
 
@@ -51,14 +57,9 @@ a {
 }
 
 p {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 150%;
-    letter-spacing: 0.02em;
-
-    @include breakpoint(phone) {
-        font-size: 13px;
-    }
+    line-height: 1.2;
 
     & + & {
         margin-top: 16px;
@@ -72,10 +73,6 @@ img {
     object-fit: cover;
 }
 
-body.is-scrolling {
-    touch-action: none;
-}
-
 @include breakpoint(phone) {
     input, input:before, input:after {
         -webkit-user-select: initial;
@@ -84,26 +81,6 @@ body.is-scrolling {
         -ms-user-select: initial;
         user-select: initial;
        }
-}
-
-
-.line {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: $grid;
-    height: 1px;
-    background: rgba($color-white, .3);
-
-    @include breakpoint(phone) {
-        width: calc(100% - 32px);
-
-        .intro & {
-            width: 100%;
-        }
-    }
 }
 
 input,
@@ -125,38 +102,11 @@ textarea {
     resize: none;
 }
 
-.datepicker__time {
-    @include breakpoint(desktop) {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    @include breakpoint(phone) {
-        input.time {
-            max-width: 85px;
-        }
-
-        input[type="time"] {
-            appearance: none;
-        }
-
-        input[type="time"]::-webkit-date-and-time-value {
-            margin: 0; // By default Android renders this as 1px 24px 1px 1px
-            width: 100%; // Let the flex element take the full width of the input
-            text-align: center; // Control your text alignment here
-        }
-    }
-}
-
 ul {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-
-
 
 h1,
 h2,
@@ -167,6 +117,7 @@ h6,
 p,
 blockquote {
     margin: 0;
+    font-weight: 400;
 }
 
 button {
@@ -201,16 +152,4 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 input:focus  {
     background: transparent;
     outline: 0;
-}
-
-
-//test
-.js-rect {
-    width: 300px;
-    height: 300px;
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
 }

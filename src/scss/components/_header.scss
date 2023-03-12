@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 35px;
+    border-bottom: 1px solid $color-dark;
+    height: $header;
+    position: relative;
+    z-index: 5;
+    position: sticky;
+    transition: 0.3s $easing;
+
+    &.sticky {
+        position: fixed;
+        top: 0;
+        background: $color-white;
+        animation: smoothScroll .4s forwards;
+    }
+
+    &__logo {
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 60px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+
+        a {
+            display: block;
+            margin: 10px;
+            width: 20px;
+
+            svg {
+                width: 100%;
+                pointer-events: none;
+            }
+        }
+    }
+}

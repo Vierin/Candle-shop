@@ -8,9 +8,21 @@
 @import "./components/svg-icons";
 @import "./components/css-icons";
 @import "./components/header";
-
- 
-
+@import "./components/footer";
+@import "./components/shipping-info";
+@import "./components/menu";
+@import "./components/button";
+@import "./components/text";
+@import "./components/section";
+@import "./components/card";
+@import "./components/socials";
+@import "./components/menu";
+@import "./components/sort";
+@import "./components/review";
+@import "./components/newsletter";
+@import "./components/acc";
+@import "./components/amount";
+@import "./components/cart-item";
 
 
 //swiper styles
@@ -18,7 +30,11 @@
 @import "./components/swiper-custom";
 
 //modules
-
+@import "./modules/cards";
+@import "./modules/insta-grid";
+@import "./modules/product";
+@import "./modules/cart";
+@import "./modules/form";
 
 
 

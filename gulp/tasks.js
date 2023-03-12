@@ -141,6 +141,25 @@ export const js = () => {
 		.pipe(app.plugins.browsersync.stream());
 }
 
+//libs
+export const libs = () => {
+	return app.gulp.src(app.path.src.libs)
+		.pipe(app.plugins.plumber(
+			app.plugins.notify.onError({
+				title: "Libs",
+				message: "Error: <%= error.message %>"
+			}))
+		)
+		.pipe(webpack({
+			mode: app.isBuild ? 'production' : 'development',
+			output: {
+				filename: 'libs.min.js',
+			}
+		}))
+		.pipe(app.gulp.dest(app.path.build.js))
+		.pipe(app.plugins.browsersync.stream());
+}
+
 //reset
 import { deleteAsync } from "del";
 export const reset = () => {

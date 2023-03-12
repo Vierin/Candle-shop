@@ -1,0 +1,49 @@
+.swiper {
+    &--hero {
+        width: 100vw;
+        height: calc(100vh - #{$info});
+    }
+
+    &-thumb {
+        display: flex;
+        justify-content: center;
+
+        &-slide {
+            margin: 10px;
+            max-width: 100px;
+            cursor: pointer;
+            position: relative;
+
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: -1px;
+                background: $color-black;
+                z-index: 0;
+                transform: scale(0.95);
+                transition: transform 0.2s $easing;
+            }
+
+            &.is-active::after {
+                transform: scale(1);
+            }
+
+            img {
+                position: relative;
+                z-index: 2;
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    &__desc {
+        position: absolute;
+        inset: auto 0 vw(70) 0;
+        text-align: center;
+
+        p:last-of-type {
+            margin-bottom: vw(30);
+        }
+    }
+}

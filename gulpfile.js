@@ -12,19 +12,20 @@ global.app = {
 }
 
 // Импорт задач
-import { html, reset, server, scss, js, images, convertFonts, insertSVGs, imageWebp, video } from "./gulp/tasks.js";
+import { html, reset, server, scss, js, libs, images, convertFonts, insertSVGs, imageWebp, video } from "./gulp/tasks.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
 	gulp.watch(path.watch.html, html);
 	gulp.watch(path.watch.scss, scss);
+	gulp.watch(path.watch.libs, libs);
 	gulp.watch(path.watch.js, js);
 	gulp.watch(path.watch.images, images);
 }
 
 
 // Основные задачи
-const mainTasks = gulp.series(gulp.parallel(html, scss, js, imageWebp, images));
+const mainTasks = gulp.series(gulp.parallel(html, scss, libs, js, imageWebp, images));
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, video, gulp.parallel(watcher, server));

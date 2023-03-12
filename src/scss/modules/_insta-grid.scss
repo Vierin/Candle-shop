@@ -1,0 +1,12 @@
+.insta-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+        flex-basis: calc(100% / 6);
+
+        img {
+            aspect-ratio: 1/1;
+        }
+    }
+}

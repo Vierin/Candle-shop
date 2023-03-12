@@ -1,0 +1,53 @@
+.form {
+    width: 400px;
+    margin-top: 50px;
+
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    p {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    input {
+        padding: 12px 14px;
+        width: 100%;
+        border: 1px solid $color-gray-light;
+        margin-bottom: 15px;
+        transition: border-color 0.4s $easing;
+
+        &:focus {
+            border-color: $color-dark;
+        }
+
+        &:not(:placeholder-shown) + label {
+            opacity: 1;
+            transform: translate(10px, -50%);
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $color-white;
+        padding: 0 5px;
+        transform: translate(10px, -42%);
+        opacity: 0;
+        transition: opacity 0.4s $easing, transform 0.4s $easing;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

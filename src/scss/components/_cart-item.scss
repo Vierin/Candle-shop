@@ -1,0 +1,51 @@
+.cart-item {
+    display: flex;
+    margin: 30px;
+
+    &__img {
+        min-width: 120px;
+        height: 120px;
+    }
+
+    &__name {
+        padding-top: 8px;
+    }
+
+    &__desc {
+        width: 100%;
+        padding-left: 25px;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    &__price {
+        color: $color-gray;
+        margin: 5px 0;
+    }
+
+    &__remove {
+        font-size: 12px;
+        position: absolute;
+        display: block;
+        width: fit-content;
+        bottom: 25px;
+        right: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 1px;
+            background: $color-dark;
+            transition: transform 0.4s $easing;
+            transform-origin: left;
+        }
+
+        @include hover {
+            &:after {
+                transform: scaleX(0);
+                transform-origin: right;
+            }
+        }
+    }
+}

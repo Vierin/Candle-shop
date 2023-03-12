@@ -1,0 +1,39 @@
+.product {
+    margin: 50px auto;
+    max-width: 1340px;
+
+    &__gallery {
+        overflow: hidden;
+
+        img {
+            aspect-ratio: 1;
+        }
+    }
+
+    &__aside {
+        max-width: calc(100% - 550px);
+    }
+
+    &__info {
+        width: 400px;
+        min-width: 400px;
+        margin: 0 100px 0 50px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    &__text {
+        margin-top: 24px;
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: flex-start;
+    }
+}

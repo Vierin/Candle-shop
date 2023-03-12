@@ -1,0 +1,37 @@
+@@include('html/head.html',{
+    "title":"Login"
+    })
+    
+    @@include('html/header.html',{})
+    
+    <main>
+       <section class="section section--form">
+            <form class="form" action="">
+                <h3 class="form__title">REGISTER</h3>
+                <p>Please fill in the information below:</p>
+                <div class="form__wrap">
+                    <div class="form__item">
+                        <input type="text" placeholder="First name" name="name" id="name">
+                        <label for="name">First name</label>
+                    </div>
+                    <div class="form__item">
+                        <input type="text" placeholder="Last name" name="surname" id="surname">
+                        <label for="surname">Last name</label>
+                    </div>
+                    <div class="form__item">
+                        <input type="email" placeholder="Email" id="email" name="email">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form__item">
+                        <input type="password" placeholder="Password" id="password" name="password">
+                        <label for="password">Password</label>
+                    </div>
+                    <button class="button" type="submit"><span class="button__text">create my account</span></button>
+                </div>
+            </form>
+       </section>
+
+    </main>
+    
+    @@include('html/footer.html',{})
+    
