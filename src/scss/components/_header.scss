@@ -10,6 +10,10 @@
         background: $color-white;
     }
 
+    .is-search & {
+        background: $color-white;
+    }
+
     &__wrap {
         position: relative;
         height: $header;

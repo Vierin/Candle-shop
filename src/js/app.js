@@ -33,6 +33,15 @@ export class App {
             e.target.parentElement.classList.toggle('is-sort-open');
         })
 
+        // search
+        document.querySelector('.js-search').addEventListener('click', () => {
+            document.documentElement.classList.toggle('is-search');
+        })
+
+        document.querySelector('.search-panel__close').addEventListener('click', () => {
+            document.documentElement.classList.remove('is-search');
+        })
+
         if(window.ontouchstart === undefined) {
             document.querySelector('html').classList.add('mod_no-touchevents');
         }

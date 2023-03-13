@@ -5,13 +5,14 @@
         padding: 12px 14px;
         border: 1px solid $color-gray-light;
         color: $color-gray;
+        transition: border-color 0.4s $easing;
+
+        &:focus {
+            border-color: $color-dark;
+        }
     }
 
-    input[type="submit"] {
-        padding: 14px 28px;
-        color: $color-white;
-        background: $color-black;
+    button {
         margin-top: 20px;
-        text-transform: uppercase;
     }
 }

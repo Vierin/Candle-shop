@@ -14,6 +14,13 @@
             svg {
                 pointer-events: none;
                 opacity: 0.5;
+                transition: opacity 0.4s $easing;
+            }
+
+            @include hover {
+                svg {
+                    opacity: 1;
+                }
             }
         }
     }

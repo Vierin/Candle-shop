@@ -37,6 +37,7 @@
                 transform: scaleX(0);
                 transform-origin: right;
                 transition: transform 0.4s $easing;
+                transition-delay: 0.1s;
             }
 
             @include hover {

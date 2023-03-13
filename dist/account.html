@@ -47,7 +47,7 @@
         </div>
     
         <div class="header__links">
-            <a href="#" class="js-search"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" class="js-search"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-search">
 <path d="M5 10C6.198 10 7.284 9.559 8.147 8.854L15.147 15.854L15.854 15.147L8.854 8.147C9.559 7.284 10 6.198 10 5C10 2.243 7.757 0 5 0C2.243 0 0 2.243 0 5C0 7.757 2.243 10 5 10ZM5 1C7.209 1 9 2.791 9 5C9 7.209 7.209 9 5 9C2.791 9 1 7.209 1 5C1 2.791 2.791 1 5 1Z" fill="black"/>
 </svg></a>
             <a href="/register.html"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,6 +56,24 @@
             <a href="#" class="cart-btn"><svg viewBox="0 0 209 209" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M190.85 200.227L178.135 58.626C177.788 54.759 174.547 51.797 170.665 51.797H144.444V39.971C144.444 17.931 126.514 0 104.475 0C82.437 0 64.509 17.931 64.509 39.971V51.797H38.27C34.388 51.797 31.147 54.759 30.8 58.626L18.035 200.784C17.847 202.882 18.549 204.961 19.97 206.515C21.391 208.069 23.4 208.954 25.505 208.954H183.431C183.437 208.954 183.445 208.954 183.451 208.954C187.594 208.954 190.951 205.596 190.951 201.454C190.95 201.037 190.916 200.626 190.85 200.227ZM79.509 39.971C79.509 26.202 90.709 15 104.476 15C118.244 15 129.445 26.202 129.445 39.971V51.797H79.509V39.971ZM33.709 193.955L45.127 66.797H64.509V80.209C64.509 84.351 67.866 87.709 72.009 87.709C76.152 87.709 79.509 84.351 79.509 80.209V66.797H129.445V80.209C129.445 84.351 132.802 87.709 136.945 87.709C141.088 87.709 144.445 84.351 144.445 80.209V66.797H163.809L175.227 193.955H33.709Z" fill="black"/>
 </svg></a>
+        </div>
+
+        <div class="search-panel">
+            
+            <div class="search-panel__head">
+                <form class="search-panel__form" action>
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-search">
+<path d="M5 10C6.198 10 7.284 9.559 8.147 8.854L15.147 15.854L15.854 15.147L8.854 8.147C9.559 7.284 10 6.198 10 5C10 2.243 7.757 0 5 0C2.243 0 0 2.243 0 5C0 7.757 2.243 10 5 10ZM5 1C7.209 1 9 2.791 9 5C9 7.209 7.209 9 5 9C2.791 9 1 7.209 1 5C1 2.791 2.791 1 5 1Z" fill="black"/>
+</svg>
+                    <input type="text" placeholder="Search...">
+                </form>
+                <button class="search-panel__close">
+                    <span class="icon-close"></span>
+                </button>
+            </div>
+            <div class="search-panel__body">
+
+            </div>
         </div>
     </div>
 </header>
@@ -321,7 +339,7 @@
             <div class="newsletter">
                 <form action>
                     <input type="email" placeholder="Enter your email address">
-                    <input type="submit" value="Subscribe">
+                    <button class="button" type="submit"><span class="button__text">Subscribe</span></button>
                 </form>
             </div>
         </div>

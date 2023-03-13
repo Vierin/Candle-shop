@@ -1,0 +1,50 @@
+.search-panel {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: transform 0.5s $easing, opacity 0.3s $easing;
+
+    .is-search & {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
+    &__head {
+        background: $color-white;
+        width: 100%;
+        height: 50px;
+        padding: 28px 50px;
+        display: flex;  
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 10px;
+        }
+
+        input {
+            font-size: 14px;
+
+            &::placeholder {
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &__close {
+        @include hover {
+            span.icon-close {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

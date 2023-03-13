@@ -1,4 +1,3 @@
-
 export class Gallery {
     constructor(view) {
         this.view = view;

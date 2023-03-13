@@ -2,6 +2,10 @@
     &--hero {
         width: 100vw;
         height: calc(100vh - #{$info});
+
+        img {
+            transform: scale(1.2);
+        }
     }
 
     &-thumb {
@@ -44,6 +48,32 @@
 
         p:last-of-type {
             margin-bottom: vw(30);
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        bottom: 30px !important;
+        right: 30px !important;
+        left: auto !important;
+        width: fit-content;
+    }
+
+    &-pagination-bullet {
+        display: block;
+        height: 12px;
+        width: 12px;
+        padding: 5px !important;
+        margin: 5px 10px !important;
+        opacity: 1;
+        background: $color-pale;
+        border-radius: 50%;
+        border: 1px solid $color-black;
+        transition: background 0.4s $easing;
+
+        &-active {
+            background: $color-black;
+            pointer-events: none;
         }
     }
 }
