@@ -380,19 +380,8 @@ input:focus {
 
 .header {
   width: 100%;
-  border-bottom: 1px solid #191915;
   height: 120px;
   z-index: 5;
-  position: relative;
-  -webkit-transition: background 0.5s ease-out;
-  -o-transition: background 0.5s ease-out;
-  transition: background 0.5s ease-out;
-}
-.mod_no-touchevents .header:hover {
-  background: #fff;
-}
-.is-search .header {
-  background: #fff;
 }
 .header__wrap {
   position: relative;
@@ -405,6 +394,19 @@ input:focus {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  border-bottom: 1px solid #191915;
+  -webkit-transition: background 0.6s ease-out;
+  -o-transition: background 0.6s ease-out;
+  transition: background 0.6s ease-out;
+}
+.is-white .header__wrap {
+  background: #fff;
+}
+.is-search .header__wrap {
+  background: #fff;
+}
+.mod_no-touchevents .header__wrap:hover {
+  background: #fff;
 }
 .header__logo {
   height: 100%;
@@ -2272,9 +2274,9 @@ swiper-container .swiper-notification {
   bottom: 30px !important;
   right: 30px !important;
   left: auto !important;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
 .swiper-pagination-bullet {
   display: block;

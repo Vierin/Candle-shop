@@ -1,18 +1,7 @@
 .header {
     width: 100%;
-    border-bottom: 1px solid $color-dark;
     height: $header;
     z-index: 5;
-    position: relative;
-    transition: background 0.5s $easing;
-
-    @include hover {
-        background: $color-white;
-    }
-
-    .is-search & {
-        background: $color-white;
-    }
 
     &__wrap {
         position: relative;
@@ -21,7 +10,23 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        border-bottom: 1px solid $color-dark;
+        transition: background 0.6s $easing;
+
+        .is-white & {
+            background: $color-white;
+        }
+
+        .is-search & {
+            background: $color-white;
+        }
+
+        @include hover {
+            background: $color-white;
+        }
     }
+
+    
 
     &__logo {
         height: 100%;

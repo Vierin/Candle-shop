@@ -58,15 +58,21 @@ export class App {
 
         // header sticky 
         const header = document.querySelector('.header');
-        const offsetTop = header.offsetTop;
-        
-        window.addEventListener('scroll', () => {
-            if(window.pageYOffset > offsetTop) {
-                header.classList.add('sticky');
-            } else {
-                header.classList.remove('sticky');
+
+        ScrollTrigger.create({
+            trigger: header,
+            start: 'top top',
+            endTrigger: 'footer',
+            end: 'bottom+=100vh bottom',
+            pin: true,
+            // pinType: "fixed",
+            markers: false,
+            pinReparent: true,
+            pinSpacing: false,
+            onToggle: e => {
+                header.classList.toggle('is-white')
             }
-        })
+        });
 
         // acc
         document.querySelectorAll('[aria-expanded]').forEach(el => {
