@@ -144,20 +144,9 @@ export const js = () => {
 //libs
 export const libs = () => {
 	return app.gulp.src(app.path.src.libs)
-		.pipe(app.plugins.plumber(
-			app.plugins.notify.onError({
-				title: "Libs",
-				message: "Error: <%= error.message %>"
-			}))
-		)
-		.pipe(webpack({
-			mode: app.isBuild ? 'production' : 'development',
-			output: {
-				filename: 'libs.min.js',
-			}
-		}))
+		.pipe(app.plugins.concat('libs.min.js'))
 		.pipe(app.gulp.dest(app.path.build.js))
-		.pipe(app.plugins.browsersync.stream());
+		 
 }
 
 //reset

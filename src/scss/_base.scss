@@ -89,6 +89,7 @@ select {
     outline: none;
     border: none;
     background: none;
+    font-family: $font-main;
 
     @include breakpoint(desktop) {
         -webkit-user-select: none;

@@ -111,6 +111,7 @@ select {
   outline: none;
   border: none;
   background: none;
+  font-family: "Quicksand";
 }
 @media (min-width: 1024px) {
   input,
@@ -749,6 +750,30 @@ input:focus {
   line-height: 1.2;
   text-transform: uppercase;
   margin-bottom: 30px;
+  position: relative;
+}
+.card__link {
+  position: absolute;
+  inset: 0;
+}
+.mod_no-touchevents .card__link:hover ~ .card__img img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.mod_no-touchevents .card__link:hover ~ .button::after {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+}
+.mod_no-touchevents .card__link:hover ~ .button .button__text {
+  color: #000;
 }
 .cards--center .card {
   max-width: 250px;
@@ -765,9 +790,22 @@ input:focus {
 }
 .card__img {
   aspect-ratio: 1/1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.card__img img {
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  -o-transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 .card .button {
   width: 100%;
+  pointer-events: none;
 }
 
 .socials {
@@ -1030,6 +1068,7 @@ input:focus {
   -webkit-transition: border-color 0.4s ease-out;
   -o-transition: border-color 0.4s ease-out;
   transition: border-color 0.4s ease-out;
+  width: 100%;
 }
 .newsletter input[type=email]:focus {
   border-color: #191915;
@@ -1038,6 +1077,10 @@ input:focus {
   margin-top: 20px;
 }
 
+.acc {
+  margin-top: 20px;
+  border-top: 1px solid #dadada;
+}
 .acc__btn {
   text-transform: uppercase;
   position: relative;
@@ -1049,6 +1092,7 @@ input:focus {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 34px 0;
+  font-weight: 500;
 }
 .acc__btn span {
   display: block;
@@ -1097,6 +1141,12 @@ input:focus {
 }
 .acc__wrap {
   overflow: hidden;
+}
+.acc li {
+  border-bottom: 1px solid #dadada;
+}
+.acc__text {
+  padding-bottom: 30px;
 }
 
 .amount {

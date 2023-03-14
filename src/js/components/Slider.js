@@ -1,5 +1,3 @@
-import { gsap } from "gsap";
-
 export class Slider {
     constructor(swiper) {
         this.swiper = swiper;
@@ -40,12 +38,12 @@ export class Slider {
             },
             on: {
                 beforeSlideChangeStart: e => {
-                    gsap.to(slide[e.activeIndex].querySelector('.swiper__desc'), {y: 30, opacity: 0, duration: 0.5})
+                    // gsap.to(slide[e.activeIndex].querySelector('.swiper__desc'), {y: 30, opacity: 0, duration: 0.5})
                 },
                 slideChangeTransitionStart: e => {
-                    gsap.fromTo(slide[e.activeIndex].querySelector('img'), { scale: 1.2}, {scale: 1, duration: 1});
+                    // gsap.fromTo(slide[e.activeIndex].querySelector('img'), { scale: 1.2}, {scale: 1, duration: 1});
 
-                    gsap.fromTo(slide[e.activeIndex].querySelector('.swiper__desc'), {y: 30, opacity: 0}, {y: 0, opacity: 1, duration: 0.6, delay: 0.8})
+                    // gsap.fromTo(slide[e.activeIndex].querySelector('.swiper__desc'), {y: 30, opacity: 0}, {y: 0, opacity: 1, duration: 0.6, delay: 0.8})
                 }
             }
         });

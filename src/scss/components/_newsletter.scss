@@ -6,6 +6,7 @@
         border: 1px solid $color-gray-light;
         color: $color-gray;
         transition: border-color 0.4s $easing;
+        width: 100%;
 
         &:focus {
             border-color: $color-dark;

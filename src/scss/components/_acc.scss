@@ -1,4 +1,7 @@
 .acc {
+    margin-top: 20px;
+    border-top: 1px solid $color-gray-light;
+
     &__btn {
         text-transform: uppercase;
         position: relative;
@@ -6,6 +9,7 @@
         display: flex;
         justify-content: space-between;
         padding: 34px 0;
+        font-weight: 500;
 
         span {
             display: block;
@@ -47,5 +51,13 @@
 
     &__wrap {
         overflow: hidden;
+    }
+
+    li {
+        border-bottom: 1px solid $color-gray-light;
+    }
+
+    &__text {
+        padding-bottom: 30px;
     }
 }
