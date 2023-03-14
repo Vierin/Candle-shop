@@ -2,6 +2,22 @@
     margin-top: 20px;
     border-top: 1px solid $color-gray-light;
 
+    &--desktop {
+        @include breakpoint(phone) {
+            display: none;
+        }
+    }
+
+    &--mobile {
+        @include breakpoint(desktop) {
+            display: none;
+        }
+    }
+
+    @include breakpoint(phone) {
+        margin-top: 50px;
+    }
+
     &__btn {
         text-transform: uppercase;
         position: relative;
@@ -10,6 +26,10 @@
         justify-content: space-between;
         padding: 34px 0;
         font-weight: 500;
+
+        @include breakpoint(phone) {
+            padding: 20px 24px;
+        }
 
         span {
             display: block;
@@ -20,6 +40,10 @@
             width: 12px;
             transition: transform 0.5s $easing;
             transform-origin: 50% 50%;
+
+            @include breakpoint(phone) {
+                right: 24px;
+            }
 
             &::after,
             &::before {
@@ -51,6 +75,7 @@
 
     &__wrap {
         overflow: hidden;
+        padding: 0 24px;
     }
 
     li {

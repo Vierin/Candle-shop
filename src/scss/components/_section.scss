@@ -7,11 +7,19 @@
 
     &--hero {
         margin: -$header auto 0;
+
+        @include breakpoint(phone) {
+            margin-top: -78px;
+        }
     }
 
     &--account {
         max-width: 1340px;
         margin: 0 auto;
+
+        @include breakpoint(phone) {
+            margin: 0 24px;
+        }
     }
 
     &--form {
@@ -36,8 +44,12 @@
     }
 
     h3 {
-        font-size: vw(24);
+        font-size: 24px;
         text-transform: uppercase;
+
+        @include breakpoint(phone) {
+            font-size: 20px;
+        }
 
         & + a {
             display: block;
@@ -49,8 +61,16 @@
     &--ps {
         padding: 80px 60px;
 
+        @include breakpoint(phone) {
+            padding: 50px 10px;
+        }
+
         .section__heading {
-            margin-bottom: vw(70);
+            margin-bottom: 70px;
+
+            @include breakpoint(phone) {
+                margin-bottom: 40px;
+            }
         }
     }
 

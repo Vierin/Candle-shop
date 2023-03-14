@@ -8,6 +8,10 @@
     li {
         margin: 0 5px;
 
+        @include breakpoint(phone) {
+            margin: 0 10px;
+        }
+
         a {
             padding: 3px;
 

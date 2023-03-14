@@ -10,6 +10,11 @@
     transition: transform 0.6s $easing;
     z-index: 6;
 
+    @include breakpoint(phone) {
+        width: 310px;
+        padding: 80px 20px 0 18px;
+    }
+
     .is-menu-open & {
         transform: translateX(0);
     }
@@ -28,8 +33,25 @@
             color: rgba($color-dark, .7);
             transition: color 0.4s $easing;
 
+            @include breakpoint(phone) {
+                padding: 20px 0;
+                font-size: 14px;
+            }
+
             @include hover {
                 color: rgba($color-dark, 1);
+            }
+        }
+
+        li.li-mobile {
+            a {
+                border: none;
+                text-transform: capitalize;
+                color: rgba($color-dark, .5);
+            }
+
+            @include breakpoint(desktop) {
+                display: none;
             }
         }
     }
@@ -107,6 +129,11 @@
         justify-content: space-between;
         padding: 5px;
         margin: auto 0;
+
+        @include breakpoint(phone) {
+            width: 28px;
+            height: 21px;
+        }
 
         span {
             display: block;

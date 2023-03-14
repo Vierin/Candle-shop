@@ -2,9 +2,17 @@
     padding: 75px 50px;
     background: $color-pale;
 
+    @include breakpoint(phone) {
+        padding: 34px 24px;
+    }
+
     &__cols {
         display: flex;
         justify-content: space-between;
+
+        @include breakpoint(phone) {
+            flex-direction: column;
+        }
     }
 
     &__heading {
@@ -25,6 +33,10 @@
             display: block;
             position: relative;
             width: fit-content;
+
+            @include breakpoint(phone) {
+                font-size: 14px;
+            }
 
             &::after {
                 content: "";
@@ -51,12 +63,24 @@
 
     &__col {
 
+        @include breakpoint(phone) {
+            margin-top: 48px;
+        }
+
         &:first-of-type {
             max-width: 350px;
+
+            @include breakpoint(phone) {
+                margin-top: 0;
+            }
         }
 
         &:last-of-type {
             max-width: 255px;
+
+            @include breakpoint(phone) {
+                max-width: 100%;
+            }
         }
     }
 

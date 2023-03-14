@@ -2,6 +2,10 @@
     display: flex;
     margin: 30px;
 
+    @include breakpoint(phone) {
+        margin: 18px;
+    }
+
     &__img {
         min-width: 120px;
         height: 120px;
@@ -9,6 +13,10 @@
 
     &__name {
         padding-top: 8px;
+
+        @include breakpoint(phone) {
+            font-size: 12px;
+        }
     }
 
     &__desc {
@@ -21,6 +29,10 @@
     &__price {
         color: $color-gray;
         margin: 5px 0;
+
+        @include breakpoint(phone) {
+            font-size: 11px;
+        }
     }
 
     &__remove {
@@ -30,6 +42,12 @@
         width: fit-content;
         bottom: 25px;
         right: 0;
+
+        @include breakpoint(phone) {
+            bottom: 5px;
+            right: auto;
+            left: 25px;
+        }
 
         &::after {
             content: "";

@@ -4,6 +4,7 @@ export class Utils {
     constructor() {
 
         this.init();
+        this.centerCards();
 
         // search
         document.querySelector('.js-search').addEventListener('click', () => {
@@ -18,6 +19,15 @@ export class Utils {
         // cart
         this.clickHandler('.cart-btn', 'is-cart-open', true);
         this.clickHandler('.cart__close', 'is-cart-open', false);
+    }
+
+    centerCards() {
+        [...document.querySelectorAll('.cards--center')].map(el => {
+            const cards = el.querySelectorAll('.card');
+            const offset = +getComputedStyle(el.querySelector('.cards__wrap')).gap.replace('px', '');
+            const width = (cards[0].clientWidth + offset) * cards.length;
+            gsap.set(el.querySelector('.cards__wrap'), {width})
+        })
     }
 
     clickHandler(el, className, event) {
@@ -49,10 +59,16 @@ export class Utils {
             el.addEventListener('click', () => {
 
                 if(el.getAttribute('aria-expanded') == 'false') {
-                    gsap.to(wrap, {height: 0, duration: 0.5});
+                    gsap.to(wrap, {height: 0, duration: 0.5,
+                    onComplete: () => {
+                        ScrollTrigger.refresh();
+                    }});
                     el.ariaExpanded = true;
                 } else {
-                    gsap.to(wrap, {height, duration: 0.5});
+                    gsap.to(wrap, {height, duration: 0.5,
+                    onComplete: () => {
+                        ScrollTrigger.refresh();
+                    }});
                     el.ariaExpanded = false;
                 }
             })

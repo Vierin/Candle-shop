@@ -10,7 +10,26 @@ export class Gallery {
     }
 
     init() {
-        this.swiper = new Swiper(this.sliderMain);
+        this.swiper = new Swiper(this.sliderMain, {
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'bullets',
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                },
+                1024: {
+                    pagination: null,
+                    navigation: null
+                }
+              }
+        });
     }
 
     setThumbs() {

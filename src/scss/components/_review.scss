@@ -6,6 +6,11 @@
 
     .product & {
         justify-content: flex-start;
+
+        @include breakpoint(phone) {
+            justify-content: center;
+            margin-bottom: 15px;
+        }
     }
 
     &__stars {

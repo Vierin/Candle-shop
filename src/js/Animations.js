@@ -28,9 +28,6 @@ export class Animations {
         });
     }
 
-    setSticky() {
-    }
-
     setupAnimations() {
         const elements = [...document.querySelectorAll('[data-animation]')];
         const items = [];

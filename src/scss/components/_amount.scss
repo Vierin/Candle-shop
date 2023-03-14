@@ -5,6 +5,10 @@
 
     .cart & {
         display: block;
+
+        @include breakpoint(phone) {
+            margin-top: 12px;
+        }
     }
 
     button {
@@ -13,6 +17,11 @@
         .cart & {
             padding: 7px 12px;
             font-size: 12px;
+
+            @include breakpoint(phone) {
+                padding: 5px 9px;
+                font-size: 10px;
+            }
         }
     }
 
@@ -25,6 +34,11 @@
         .cart & {
             font-size: 14px;
             max-width: 20px;
+
+            @include breakpoint(phone) {
+                font-size: 12px;
+                max-width: 15px;
+            }
         }
     }
 }

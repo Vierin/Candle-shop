@@ -1,6 +1,6 @@
 .button {
     position: relative;
-    min-height: vw(42);
+    min-height: 42px;
     border: 1px solid $color-black;
 
     &::after {
@@ -20,6 +20,12 @@
         color: $color-white;
         padding: 14px 28px;
         transition: color 0.5s $easing;
+
+        @include breakpoint(phone) {
+            font-size: 13px;
+            font-weight: 500;
+            padding: 14px 35px;
+        }
     }
 
     @include hover {

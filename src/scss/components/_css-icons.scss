@@ -6,6 +6,11 @@
     width: 24px;
     pointer-events: none;
 
+    @include breakpoint(phone) {
+        width: 20px;
+        height: 20px;
+    }
+
     &::after,
     &::before {
         content: "";

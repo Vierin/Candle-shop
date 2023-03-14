@@ -8,6 +8,11 @@
     position: relative;
     z-index: 5;
 
+    @include breakpoint(phone) {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
     a {
         position: relative;
         display: block;

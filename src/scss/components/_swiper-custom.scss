@@ -8,9 +8,17 @@
         }
     }
 
+    &--gallery {
+        position: relative;
+    }
+
     &-thumb {
         display: flex;
         justify-content: center;
+
+        @include breakpoint(phone) {
+            display: none;
+        }
 
         &-slide {
             margin: 10px;
@@ -43,11 +51,38 @@
 
     &__desc {
         position: absolute;
-        inset: auto 0 vw(70) 0;
+        inset: auto 0 70px 0;
         text-align: center;
+        line-height: 1.2;
+        text-transform: uppercase;
+
+        @include breakpoint(phone) {
+            bottom: 85px;
+        }
+
+        h2 {
+            font-size: 22px;
+
+            @include breakpoint(phone) {
+                font-size: 18px;
+                margin-bottom: 25px;
+                font-weight: 500;
+            }
+        }
 
         p:last-of-type {
-            margin-bottom: vw(30);
+            margin-bottom: 30px;
+            font-size: 12px;
+
+            @include breakpoint(phone) {
+                display: none;
+            }
+        }
+
+        @include breakpoint(phone) {
+            .button:last-of-type {
+                margin-left: 20px;
+            }
         }
     }
 
@@ -57,6 +92,17 @@
         right: 30px !important;
         left: auto !important;
         width: fit-content !important;
+
+        @include breakpoint(phone) {
+            right: auto !important;
+            left: 30px !important;
+
+            .product & {
+                left: 50% !important;
+                top: calc(100% + 10px);
+                transform: translateX(-50%);
+            }
+        }
     }
 
     &-pagination-bullet {
@@ -75,5 +121,22 @@
             background: $color-black;
             pointer-events: none;
         }
+    }
+
+    &-button-prev,
+    &-button-next {
+        top: 100% !important;
+        color: $color-dark;
+        transform: translateY(50%);
+        left: 28% !important;
+
+        &:after {
+            font-size: 20px !important;
+        }
+    }
+
+    &-button-next {
+        left: auto !important;
+        right: 28% !important;
     }
 }

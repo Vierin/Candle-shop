@@ -2,8 +2,15 @@
     margin: 50px auto;
     max-width: 1340px;
 
+    @include breakpoint(phone) {
+        margin-top: 0;
+    }
+
     &__gallery {
-        overflow: hidden;
+
+        @include breakpoint(desktop) {
+            overflow: hidden;
+        }
 
         img {
             aspect-ratio: 1;
@@ -12,16 +19,39 @@
 
     &__aside {
         max-width: calc(100% - 550px);
+
+        @include breakpoint(phone) {
+            max-width: 100%;
+        }
     }
 
     &__info {
         width: 400px;
         min-width: 400px;
         margin: 0 100px 0 50px;
+
+        @include breakpoint(phone) {
+            margin: 60px 0 0;
+            padding: 0 24px;
+            width: 100%;
+            min-width: 100%;
+        }
+    }
+
+    &__price {
+        @include breakpoint(phone) {
+            text-align: center;
+        }
     }
 
     &__title {
         text-transform: uppercase;
+
+        @include breakpoint(phone) {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
     }
 
     .button {
@@ -35,5 +65,9 @@
     &__wrap {
         display: flex;
         justify-content: flex-start;
+
+        @include breakpoint(phone) {
+            flex-direction: column;
+        }
     }
 }

@@ -30,11 +30,20 @@
 
     .cards--center & {
         max-width: 250px;
+
+        @include breakpoint(phone) {
+            max-width: 208px;
+            min-width: 208px;
+        }
     }
 
     &__title {
         margin-top: 20px;
         font-size: 14px;
+
+        @include breakpoint(phone) {
+            font-size: 13px;
+        }
     }
 
     &__price {
@@ -42,6 +51,11 @@
         font-size: 14px;
         color: $color-gray;
         margin-top: 5px;
+
+        @include breakpoint(phone) {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
     }
 
     &__img {

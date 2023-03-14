@@ -7,6 +7,10 @@
     &__head {
         flex-basis: 100%;
         margin-bottom: 70px;
+
+        @include breakpoint(phone) {
+            margin-bottom: 50px;
+        }
     }
 
     &__out {
@@ -51,11 +55,20 @@
 
     &__orders {
         flex-basis: 70%;
+
+        @include breakpoint(not-desktop) {
+            flex-basis: 100%;
+            margin-bottom: 60px;
+        }
     }
 
     &__address {
         flex-basis: 25%;
         margin-bottom: 60px;
+
+        @include breakpoint(not-desktop) {
+            flex-basis: 100%;
+        }
     }
 
     &__content {

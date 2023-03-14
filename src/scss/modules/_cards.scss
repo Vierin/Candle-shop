@@ -4,17 +4,33 @@
         padding-top: 20px;
     }
 
+    &--center {
+        @include breakpoint(phone) {
+            overflow-x: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
     &__wrap {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: vw(30);
+        gap: 30px;
         margin: 0 auto;
         width: 100%;
         position: relative;
 
+        @include breakpoint(phone) {
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         .cards--center & {
             display: flex;
             justify-content: center;
+            margin: 0 calc((100vw - 208px - 10px) / 2);
         }
     }
 
@@ -23,5 +39,9 @@
         align-items: center;
         margin: 80px auto 0;
         width: fit-content;
+
+        @include breakpoint(phone) {
+            margin-top: 50px;
+        }
     }
 }

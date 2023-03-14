@@ -1,9 +1,24 @@
 .insta-grid {
     display: flex;
     flex-wrap: wrap;
+ 
+    @include breakpoint(phone) {
+        a:nth-of-type(7),
+        a:nth-of-type(8),
+        a:nth-of-type(9),
+        a:nth-of-type(10),
+        a:nth-of-type(11),
+        a:nth-of-type(12) {
+            display: none;
+        }
+    }
 
     & > * {
         flex-basis: calc(100% / 6);
+
+        @include breakpoint(phone) {
+            flex-basis: calc(100% / 3);
+        }
 
         img {
             aspect-ratio: 1/1;
