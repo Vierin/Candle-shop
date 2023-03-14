@@ -90,9 +90,14 @@
             <div class="sort">
                 <button class="sort-btn">
                     Sort
-                    <svg role="presentation" viewBox="0 0 19 12" xmlns="http://www.w3.org/2000/svg" class="svg-chevron">
+                    <span>
+                        <svg role="presentation" viewBox="0 0 19 12" xmlns="http://www.w3.org/2000/svg" class="svg-chevron">
     <polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"/>
 </svg>
+                        <svg role="presentation" viewBox="0 0 19 12" xmlns="http://www.w3.org/2000/svg" class="svg-chevron">
+    <polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"/>
+</svg>
+                    </span>
                 </button>
                 <ul class="sort__list">
                     <li><button>all</button></li>
@@ -484,8 +489,9 @@
        
     <ul class="menu__wrap js-menu-wrap">
         <li><a href="/">Home</a></li>
-        <li><a href="/shop.html">Shop</a>
-            <ul class="menu__sub">
+        <li><a class="menu__sub" href="/shop.html">Shop</a>
+            <ul>
+                <li><a href>Candle in plaster</a></li>
                 <li><a href>Candles</a></li>
                 <li><a href>Diffusor</a></li>
                 <li><a href>Cloche candles</a></li>

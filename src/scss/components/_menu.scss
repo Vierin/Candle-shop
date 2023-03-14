@@ -24,12 +24,66 @@
             padding: 30px 0;
             border-bottom: 1px solid rgba($color-dark, .3);
             text-transform: uppercase;
+            font-weight: 500;
+            color: rgba($color-dark, .7);
+            transition: color 0.4s $easing;
+
+            @include hover {
+                color: rgba($color-dark, 1);
+            }
         }
     }
 
 
     &__sub {
-        display: none;
+        position: relative;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: $color-black;
+            width: 14px;
+            transition: transform 0.4s $easing;
+        }
+
+        &::after {
+            transform: rotate(90deg);
+        }
+
+        &.sub-shown {
+            &::after {
+                transform: rotate(270deg) !important;
+            }
+
+            &::before {
+                transform: rotate(180deg) !important;
+            }
+        }
+
+        @include hover {
+            &::after {
+                transform: rotate(180deg);
+            }
+
+            &::before {
+                transform: rotate(90deg);
+            }
+        }
+
+        & + ul {
+            margin-left: 15px;
+            height: 0;
+            overflow: hidden;
+
+            a {
+                font-size: 13px;
+                padding: 17px 0;
+            }
+        }
     }
 
     &__close {

@@ -15,8 +15,32 @@
         align-items: center;
         border-left: 1px solid $color-gray-light;
 
-        svg {
+        span {
+            display: block;
+            position: relative;
             margin-left: 7px;
+            overflow: hidden;
+            margin-bottom: 1px;
+
+            svg {
+                transition: transform 0.4s $easing;
+            }
+
+            svg:last-of-type {
+                position: absolute;
+                top: -10px;
+                left: 0;
+            }
+        }
+
+        @include hover {
+            svg:first-of-type {
+                transform: translateY(15px);
+            }
+
+            svg:last-of-type {
+                transform: translateY(15px);
+            }
         }
     }
 
@@ -58,6 +82,13 @@
             padding: 12px 50px;
             font-size: 14px;
             text-transform: uppercase;
+            font-weight: 500;
+            opacity: 0.74;
+            transition: opacity 0.4s $easing;
+
+            @include hover {
+                opacity: 1;
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ main {
     &::after {
         content: "";
         position: absolute;
-        inset: 0;
+        inset: -400px 0 0 0;
         z-index: 5;
         background: rgba($color-black, 0.6);
         pointer-events: none;
@@ -49,6 +49,8 @@ main {
         }
     }
 }
+
+
 
 
 a {
