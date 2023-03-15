@@ -66,8 +66,11 @@
             width: 20px;
 
             @include breakpoint(phone) {
-                width: 16px;
-                margin: 0 0 0 20px;
+                margin: 0 12px;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
             }
 
             svg {

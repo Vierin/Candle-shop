@@ -1,0 +1,59 @@
+.langs {
+    position: relative;
+
+    button {
+        width: 22px;
+        margin: 0 10px;
+        padding: 0;
+
+        img {
+            width: 100%;
+            pointer-events: none;
+        }
+    }
+
+    &__list {
+        position: absolute;
+        top: calc(100% + 15px);
+        left: 0;
+        width: fit-content;
+        background: $color-white;
+        border: 1px solid $color-gray-light;
+        padding-top: 15px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: opacity 0.4s $easing, transform 0.4s $easing;
+
+        .is-lang-change & {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 9px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 12px 12px 12px;
+            border-color: transparent transparent $color-white transparent;
+            z-index: 1;
+        }
+
+        &::after {
+            bottom: calc(100% + 1px);
+            z-index: 0;
+            border-color: transparent transparent $color-gray-light transparent;
+        }
+
+
+        li {
+           padding-bottom: 15px;
+        }
+    }
+}

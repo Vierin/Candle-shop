@@ -19,6 +19,20 @@ export class Utils {
         // cart
         this.clickHandler('.cart-btn', 'is-cart-open', true);
         this.clickHandler('.cart__close', 'is-cart-open', false);
+
+
+        
+        this.setLang();
+    }
+
+    setLang() {
+        document.querySelector('.langs-btn').addEventListener('click', () => {
+            document.documentElement.classList.toggle('is-lang-change');
+        });
+
+        [...document.querySelectorAll('button[data-lang]')].map(el => {
+            el.addEventListener('click', () => document.documentElement.classList.remove('is-lang-change'))
+        })
     }
 
     centerCards() {

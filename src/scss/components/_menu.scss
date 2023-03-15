@@ -12,7 +12,7 @@
 
     @include breakpoint(phone) {
         width: 310px;
-        padding: 80px 20px 0 18px;
+        padding: 60px 20px 0 18px;
     }
 
     .is-menu-open & {
@@ -34,7 +34,7 @@
             transition: color 0.4s $easing;
 
             @include breakpoint(phone) {
-                padding: 20px 0;
+                padding: 18px 0;
                 font-size: 14px;
             }
 
@@ -44,11 +44,6 @@
         }
 
         li.li-mobile {
-            a {
-                border: none;
-                text-transform: capitalize;
-                color: rgba($color-dark, .5);
-            }
 
             @include breakpoint(desktop) {
                 display: none;
