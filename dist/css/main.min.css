@@ -1772,6 +1772,13 @@ body::before {
 .langs button {
   margin: 0 8px;
   font-size: 22px;
+  color: #191915;
+}
+@media (max-width: 767px) {
+  .langs button {
+    padding: 0;
+    font-size: 20px;
+  }
 }
 .langs button span {
   display: block;
@@ -1786,6 +1793,7 @@ body::before {
   font-size: 14px;
   right: 0;
   font-weight: 600;
+  color: #191915;
   font-family: "Font Awesome 5 Free";
 }
 .langs__list {
@@ -2799,11 +2807,29 @@ swiper-container .swiper-notification {
   height: calc(100vh - 45px);
 }
 .swiper--hero img {
+  cursor: -webkit-grab;
+  cursor: grab;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
-  cursor: -webkit-grab;
-  cursor: grab;
+  -webkit-transition: -webkit-transform 0s ease-out;
+  transition: -webkit-transform 0s ease-out;
+  -o-transition: transform 0s ease-out;
+  transition: transform 0s ease-out;
+  transition: transform 0s ease-out, -webkit-transform 0s ease-out;
+  -webkit-transition-delay: 3s;
+  -o-transition-delay: 3s;
+  transition-delay: 3s;
+}
+.swiper--hero .swiper-slide-active img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  -o-transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 .swiper--gallery {
   position: relative;

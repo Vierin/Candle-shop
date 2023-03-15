@@ -24,7 +24,7 @@ export class Slider {
         const slide = this.swiper.querySelectorAll('.swiper-slide');
 
         const swiper = new Swiper(this.swiper, {
-            speed: 1500,
+            speed: 500,
             loop: true,
             watchSlidesProgress: true,
             slidesPerView: this.options.slidesPerView ? +this.options.slidesPerView : 1,
@@ -37,13 +37,20 @@ export class Slider {
                 clickable: true
             },
             on: {
+               
                 beforeSlideChangeStart: e => {
-                    // gsap.to(slide[e.activeIndex].querySelector('.swiper__desc'), {y: 30, opacity: 0, duration: 0.5})
-                },
-                slideChangeTransitionStart: e => {
-                    // gsap.fromTo(slide[e.activeIndex].querySelector('img'), { scale: 1.2}, {scale: 1, duration: 1});
+                    // gsap.killTweensOf(slide[e.realIndex]);
+                    
+                    // [...slide].map(el => {
+                    //     // gsap.to(el.querySelector('.swiper__desc'), {opacity: 0, duration: 0.2})
 
-                    // gsap.fromTo(slide[e.activeIndex].querySelector('.swiper__desc'), {y: 30, opacity: 0}, {y: 0, opacity: 1, duration: 0.6, delay: 0.8})
+                    // })
+                },
+                beforeTransitionStart: e => {
+
+                    gsap.killTweensOf(slide[e.realIndex].querySelector('.swiper__desc'));
+
+                    gsap.fromTo(slide[e.realIndex].querySelector('.swiper__desc'), {y: 20, opacity: 0}, {y: 0, opacity: 1, duration: 0.6, delay: 0.4})
                 }
             }
         });

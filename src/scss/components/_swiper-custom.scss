@@ -4,8 +4,17 @@
         height: calc(100vh - #{$info});
 
         img {
-            transform: scale(1.2);
             cursor: grab;
+            transform: scale(1.2);
+            transition: transform 0s $easing;
+            transition-delay: 3s;
+        }
+
+        .swiper-slide-active {
+            img {
+                transform: scale(1);
+                transition: transform 0.5s $easing;
+            }
         }
     }
 

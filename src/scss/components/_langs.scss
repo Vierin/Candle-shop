@@ -4,6 +4,12 @@
     button {
         margin: 0 8px;
         font-size: 22px;
+        color: $color-dark;
+
+        @include breakpoint(phone) {
+            padding: 0;
+            font-size: 20px;
+        }
 
         span {
             display: block;
@@ -18,6 +24,7 @@
                 font-size: 14px;
                 right: 0;
                 font-weight: 600;
+                color: $color-dark;
                 font-family: "Font Awesome 5 Free";
             }
         }
