@@ -2,33 +2,45 @@
     position: relative;
 
     button {
-        width: 22px;
-        margin: 0 10px;
-        padding: 0;
+        margin: 0 8px;
+        font-size: 22px;
 
-        img {
-            width: 100%;
-            pointer-events: none;
+        span {
+            display: block;
+            margin-bottom: 2px;
+            position: relative;
+            padding-right: 18px;
+
+            &::after {
+                content: "\f078";
+                position: absolute;
+                top: calc(50% - 7px);
+                font-size: 14px;
+                right: 0;
+                font-weight: 600;
+                font-family: "Font Awesome 5 Free";
+            }
         }
     }
 
     &__list {
         position: absolute;
         top: calc(100% + 15px);
-        left: 0;
+        left: 50%;
         width: fit-content;
         background: $color-white;
         border: 1px solid $color-gray-light;
         padding-top: 15px;
         opacity: 0;
         pointer-events: none;
-        transform: translateY(10px);
+        transform: translate(-50%, 10px);
         transition: opacity 0.4s $easing, transform 0.4s $easing;
+        text-align: center;
 
         .is-lang-change & {
             opacity: 1;
             pointer-events: all;
-            transform: translateY(0);
+            transform: translate(-50%, 0);
         }
 
         &::before,
@@ -36,7 +48,8 @@
             content: "";
             position: absolute;
             bottom: 100%;
-            left: 9px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 0;
             border-style: solid;

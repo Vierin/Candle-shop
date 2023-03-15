@@ -112,6 +112,7 @@ select {
   border: none;
   background: none;
   font-family: "Quicksand";
+  border-radius: 0;
 }
 @media (min-width: 1024px) {
   input,
@@ -677,7 +678,7 @@ body::before {
 @media (max-width: 767px) {
   .menu {
     width: 310px;
-    padding: 60px 20px 0 18px;
+    padding: 50px 20px 0 18px;
   }
 }
 .is-menu-open .menu {
@@ -1073,7 +1074,7 @@ body::before {
 }
 .socials--menu {
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   left: 0;
   right: 0;
   padding: 15px 10px;
@@ -1114,7 +1115,7 @@ body::before {
 @media (max-width: 767px) {
   .menu {
     width: 310px;
-    padding: 60px 20px 0 18px;
+    padding: 50px 20px 0 18px;
   }
 }
 .is-menu-open .menu {
@@ -1769,18 +1770,28 @@ body::before {
   position: relative;
 }
 .langs button {
-  width: 22px;
-  margin: 0 10px;
-  padding: 0;
+  margin: 0 8px;
+  font-size: 22px;
 }
-.langs button img {
-  width: 100%;
-  pointer-events: none;
+.langs button span {
+  display: block;
+  margin-bottom: 2px;
+  position: relative;
+  padding-right: 18px;
+}
+.langs button span::after {
+  content: "\f078";
+  position: absolute;
+  top: calc(50% - 7px);
+  font-size: 14px;
+  right: 0;
+  font-weight: 600;
+  font-family: "Font Awesome 5 Free";
 }
 .langs__list {
   position: absolute;
   top: calc(100% + 15px);
-  left: 0;
+  left: 50%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1789,27 +1800,31 @@ body::before {
   padding-top: 15px;
   opacity: 0;
   pointer-events: none;
-  -webkit-transform: translateY(10px);
-  -ms-transform: translateY(10px);
-  transform: translateY(10px);
+  -webkit-transform: translate(-50%, 10px);
+  -ms-transform: translate(-50%, 10px);
+  transform: translate(-50%, 10px);
   -webkit-transition: opacity 0.4s ease-out, -webkit-transform 0.4s ease-out;
   transition: opacity 0.4s ease-out, -webkit-transform 0.4s ease-out;
   -o-transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   transition: opacity 0.4s ease-out, transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  text-align: center;
 }
 .is-lang-change .langs__list {
   opacity: 1;
   pointer-events: all;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 .langs__list::before, .langs__list::after {
   content: "";
   position: absolute;
   bottom: 100%;
-  left: 9px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 0;
   height: 0;
   border-style: solid;
@@ -2787,6 +2802,8 @@ swiper-container .swiper-notification {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 .swiper--gallery {
   position: relative;

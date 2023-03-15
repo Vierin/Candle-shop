@@ -25,12 +25,12 @@ export class Slider {
 
         const swiper = new Swiper(this.swiper, {
             speed: 1500,
+            loop: true,
             watchSlidesProgress: true,
             slidesPerView: this.options.slidesPerView ? +this.options.slidesPerView : 1,
             spaceBetween: this.options.spaceBetween ? +this.options.spaceBetween : 0,
             autoplay: !this.options.autoplay ? null : { delay: 3000 },
             effect: "fade",
-            simulateTouch: false,
             pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
