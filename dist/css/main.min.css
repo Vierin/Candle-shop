@@ -670,7 +670,7 @@ body::before {
   -o-transition: transform 0.6s ease-out;
   transition: transform 0.6s ease-out;
   transition: transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
-  z-index: 10;
+  z-index: 15;
 }
 @media (max-width: 767px) {
   .menu {
@@ -1112,7 +1112,7 @@ body::before {
   -o-transition: transform 0.6s ease-out;
   transition: transform 0.6s ease-out;
   transition: transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
-  z-index: 10;
+  z-index: 15;
 }
 @media (max-width: 767px) {
   .menu {
