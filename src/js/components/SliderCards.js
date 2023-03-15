@@ -10,10 +10,16 @@ export class SliderCards {
     setSlider() {
         this.slider = new Swiper(this.view, {
             slidesPerView: 4,
-            spaceBetween: 50,
+            spaceBetween: 30,
             navigation: {
                 nextEl: '.swiper-cards-button-next',
                 prevEl: '.swiper-cards-button-prev',
+            },
+            breakpoints: {
+                // when window width is >= 320px
+                1200: {
+                    spaceBetween: 50,
+                }
             }
         })
     }

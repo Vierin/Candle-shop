@@ -2,6 +2,11 @@
     margin: 50px auto;
     max-width: 1340px;
 
+    @include breakpoint(tablet-landscape) {
+        max-width: 100%;
+        margin: 50px 30px 0;
+    }
+
     @include breakpoint(not-desktop) {
         margin-top: 0;
     }
@@ -86,5 +91,9 @@
         @include breakpoint(not-desktop) {
             flex-direction: column;
         }
+    }
+
+    &__wrapper {
+        padding-bottom: 50px;
     }
 }

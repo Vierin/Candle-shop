@@ -8,10 +8,10 @@ export class Animations {
     }
 
     init() {
-        // sticky
+        // header sticky 
+            const header = document.querySelector('.header');
 
-        // header sticky
-        const header = document.querySelector('.header');
+        document.body.dataset.page !== "Home" && header.classList.add('is-white')
 
         ScrollTrigger.create({
             trigger: header,
@@ -23,9 +23,9 @@ export class Animations {
             pinReparent: true,
             pinSpacing: false,
             onToggle: () => {
-                header.classList.toggle('is-white')
+                document.body.dataset.page === "Home" && header.classList.toggle('is-white')
             }
-        });
+        }); 
     }
 
     setupAnimations() {

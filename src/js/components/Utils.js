@@ -22,6 +22,24 @@ export class Utils {
 
         
         this.setLang();
+        this.stickyInfo();
+    }
+
+    stickyInfo() {
+        const box = document.querySelector('.product__info');
+        if(box) {
+            const height = box.children[0].clientHeight;
+            const top = 165;
+
+            ScrollTrigger.create({
+                trigger: box,
+                markers: true, 
+                start: `top ${top}px`, 
+                end: `bottom ${top + height}px`, 
+                pin: true,
+            })
+        }
+        
     }
 
     setLang() {

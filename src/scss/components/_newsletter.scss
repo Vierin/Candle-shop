@@ -1,6 +1,10 @@
 .newsletter {
     margin-top: 18px;
 
+    @include breakpoint(tablet-landscape) {
+        max-width: 280px;
+    }
+
     input[type="email"] {
         padding: 12px 14px;
         border: 1px solid $color-gray-light;

@@ -426,7 +426,7 @@ body::before {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid rgba(25, 25, 21, 0.6);
   -webkit-transition: background 0.6s ease-out;
   -o-transition: background 0.6s ease-out;
   transition: background 0.6s ease-out;
@@ -517,6 +517,12 @@ body::before {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .footer__cols {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .footer__cols {
     -ms-flex-wrap: wrap;
@@ -549,6 +555,11 @@ body::before {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .footer__links li a {
+    width: 50%;
+  }
 }
 @media (max-width: 767px) {
   .footer__links li a {
@@ -586,6 +597,13 @@ body::before {
   -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .footer__col {
+    -ms-flex-preferred-size: 45%;
+    flex-basis: 45%;
+    margin-bottom: 45px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .footer__col {
     -ms-flex-preferred-size: 45%;
@@ -608,6 +626,14 @@ body::before {
 }
 .footer__col:last-of-type {
   max-width: 255px;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .footer__col:last-of-type {
+    max-width: 45%;
+  }
+  .footer__col:last-of-type p {
+    max-width: 300px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .footer__col:last-of-type {
@@ -1535,6 +1561,11 @@ body::before {
 
 .newsletter {
   margin-top: 18px;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .newsletter {
+    max-width: 280px;
+  }
 }
 .newsletter input[type=email] {
   padding: 12px 14px;
@@ -2942,6 +2973,11 @@ swiper-container .swiper-notification {
   position: relative;
   overflow: visible;
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .swiper--cards {
+    margin: 0 50px;
+  }
+}
 @media (max-width: 1023px) {
   .swiper--cards {
     margin: 0;
@@ -3328,6 +3364,12 @@ swiper-container .swiper-notification {
   margin: 50px auto;
   max-width: 1340px;
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .product {
+    max-width: 100%;
+    margin: 50px 30px 0;
+  }
+}
 @media (max-width: 1023px) {
   .product {
     margin-top: 0;
@@ -3419,6 +3461,9 @@ swiper-container .swiper-notification {
     -ms-flex-direction: column;
     flex-direction: column;
   }
+}
+.product__wrapper {
+  padding-bottom: 50px;
 }
 
 .cart {
@@ -3714,10 +3759,15 @@ swiper-container .swiper-notification {
   -ms-flex-preferred-size: 100%/3;
   flex-basis: 100%/3;
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .category {
+    -ms-flex-preferred-size: 33%;
+    flex-basis: 33%;
+    min-height: 500px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .category {
-    -ms-flex-preferred-size: calc(50% - 30px);
-    flex-basis: calc(50% - 30px);
     min-height: 500px;
   }
 }
@@ -3737,6 +3787,13 @@ swiper-container .swiper-notification {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .category__wrap {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+}
 .category__img {
   overflow: hidden;
   height: 100%;
@@ -3754,6 +3811,12 @@ swiper-container .swiper-notification {
   bottom: 50px;
   padding: 0 50px;
   z-index: 2;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  .category__desc {
+    bottom: 30px;
+    padding: 0 30px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .category__desc {
@@ -3787,4 +3850,23 @@ swiper-container .swiper-notification {
 }
 .mod_no-touchevents .category__link:hover ~ .category__desc button .button__text {
   color: #fff;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 30;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.loader svg {
+  width: 70px;
 }
