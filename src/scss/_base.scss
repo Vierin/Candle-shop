@@ -156,3 +156,12 @@ input:focus  {
     background: transparent;
     outline: 0;
 }
+
+//breakpoints
+body::before {
+    display: none;
+
+    @include breakpoint(phone) { content: "phone"; }
+    @include breakpoint(tablet) { content: "tablet"; }
+    @include breakpoint(desktop) { content: "desktop"; }
+}

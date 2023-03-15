@@ -22,12 +22,12 @@ export class Utils {
     }
 
     centerCards() {
-        [...document.querySelectorAll('.cards--center')].map(el => {
-            const cards = el.querySelectorAll('.card');
-            const offset = +getComputedStyle(el.querySelector('.cards__wrap')).gap.replace('px', '');
-            const width = (cards[0].clientWidth + offset) * cards.length;
-            gsap.set(el.querySelector('.cards__wrap'), {width})
-        })
+        // [...document.querySelectorAll('.cards--center')].map(el => {
+        //     const cards = el.querySelectorAll('.card');
+        //     const offset = +getComputedStyle(el.querySelector('.cards__wrap')).gap.replace('px', '');
+        //     const width = (cards[0].clientWidth + offset) * cards.length;
+        //     gsap.set(el.querySelector('.cards__wrap'), {width})
+        // })
     }
 
     clickHandler(el, className, event) {
@@ -80,4 +80,16 @@ export class Utils {
             e.target.parentElement.classList.toggle('is-sort-open');
         })
     }
+}
+
+export function getBreakpoint() {
+    const before = window.getComputedStyle(document.querySelector('body'), ':before');
+    const breakpoint = before.getPropertyValue('content').replace(/[\"\']/g, '');
+
+    return {
+        desktop: breakpoint === 'desktop',
+        phone: breakpoint === 'phone',
+        tablet: breakpoint === 'tablet',
+        value: breakpoint,
+    };
 }

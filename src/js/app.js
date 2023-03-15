@@ -1,9 +1,11 @@
-import { Utils } from "./components/Utils.js";
+import { Utils, getBreakpoint } from "./components/Utils.js";
 import { Animations } from "./Animations.js";
 
 import { componentsList } from "./components/ComponentList.js"
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+export let breakpoint;
 export class App {
     constructor() {
         this.load();
@@ -17,11 +19,14 @@ export class App {
     }
 
     load() {
-        this.initScroll();
+        breakpoint = getBreakpoint();
+
+        breakpoint.desktop && this.initScroll();
 
         const utils = new Utils();
         const animations = new Animations();
         this.setComponents();
+        
     }
 
     setComponents() {

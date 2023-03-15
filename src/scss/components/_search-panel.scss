@@ -17,9 +17,13 @@
         width: 100%;
         height: 50px;
         padding: 28px 50px;
-        display: flex;  
+        display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include breakpoint(phone) {
+            padding: 15px 18px;
+        }
     }
 
     &__form {
