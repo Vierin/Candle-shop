@@ -60,7 +60,7 @@ export class App {
                             .fromTo(logoWords[3], 
                                 {clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"}, 
                                 {clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)", duration})
-                    }a    
+                    }    
             }})    
     }
 
