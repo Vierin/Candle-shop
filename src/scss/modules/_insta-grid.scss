@@ -1,6 +1,15 @@
 .insta-grid {
     display: flex;
     flex-wrap: wrap;
+
+    @include breakpoint(tablet) {
+        a:nth-of-type(9),
+        a:nth-of-type(10),
+        a:nth-of-type(11),
+        a:nth-of-type(12) {
+            display: none;
+        }
+    }
  
     @include breakpoint(phone) {
         a:nth-of-type(7),
@@ -15,6 +24,10 @@
 
     & > * {
         flex-basis: calc(100% / 6);
+
+        @include breakpoint(tablet) {
+            flex-basis: 25%;
+        }
 
         @include breakpoint(phone) {
             flex-basis: calc(100% / 3);

@@ -17,6 +17,10 @@
         max-width: 1340px;
         margin: 0 auto;
 
+        @include breakpoint(tablet) {
+            margin: 0 40px;
+        }
+
         @include breakpoint(phone) {
             margin: 0 24px;
         }
@@ -26,9 +30,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    &--form {
         margin: -$header auto 0;
         height: 100vh;
     }
@@ -54,12 +55,20 @@
         & + a {
             display: block;
             margin-top: 30px;
+
+            @include breakpoint(phone) {
+                margin-top: 20px;
+            }
         }
     }
 
     &--p,
     &--ps {
         padding: 80px 60px;
+
+        @include breakpoint(tablet) {
+            padding: 50px 30px;
+        }
 
         @include breakpoint(phone) {
             padding: 50px 10px;
@@ -88,5 +97,13 @@
 
     &--category {
         padding: 15px 30px;
+
+        @include breakpoint(not-desktop) {
+            margin-bottom: 50px;
+        }
+
+        @include breakpoint(phone) {
+            padding: 15px 24px;
+        }
     }
 }

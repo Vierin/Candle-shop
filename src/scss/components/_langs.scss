@@ -6,6 +6,10 @@
         font-size: 22px;
         color: $color-dark;
 
+        @include breakpoint(tablet) {
+            margin: 0 12px;
+        }
+
         @include breakpoint(phone) {
             padding: 0;
             font-size: 20px;

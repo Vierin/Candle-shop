@@ -3,7 +3,7 @@
     border-top: 1px solid $color-gray-light;
 
     &--desktop {
-        @include breakpoint(phone) {
+        @include breakpoint(not-desktop) {
             display: none;
         }
     }
@@ -12,9 +12,10 @@
         @include breakpoint(desktop) {
             display: none;
         }
+        
     }
 
-    @include breakpoint(phone) {
+    @include breakpoint(not-desktop) {
         margin-top: 50px;
     }
 
@@ -27,8 +28,12 @@
         padding: 34px 0;
         font-weight: 500;
 
-        @include breakpoint(phone) {
+        @include breakpoint(not-desktop) {
             padding: 20px 24px;
+
+            @include breakpoint(tablet) {
+                font-size: 18px;
+            }
         }
 
         span {
@@ -84,5 +89,11 @@
 
     &__text {
         padding-bottom: 30px;
+
+        @include breakpoint(tablet) {
+            p {
+                font-size: 18px;
+            }
+        }
     }
 }

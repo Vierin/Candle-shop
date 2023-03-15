@@ -2,6 +2,10 @@
 
     .sort + & {
         padding-top: 20px;
+
+        @include breakpoint(tablet) {
+            padding-top: 50px;
+        }
     }
 
     &--center {
@@ -22,9 +26,13 @@
         width: 100%;
         position: relative;
 
+        @include breakpoint(not-desktop) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
         @include breakpoint(phone) {
             gap: 10px;
-            grid-template-columns: repeat(2, 1fr);
         }
 
         .cards--center & {

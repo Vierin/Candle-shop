@@ -10,6 +10,10 @@
         display: flex;
         justify-content: space-between;
 
+        @include breakpoint(tablet) {
+            flex-wrap: wrap;
+        }
+
         @include breakpoint(phone) {
             flex-direction: column;
         }
@@ -63,6 +67,11 @@
 
     &__col {
 
+        @include breakpoint(tablet) {
+            flex-basis: 45%;
+            margin-bottom: 45px;
+        }
+
         @include breakpoint(phone) {
             margin-top: 48px;
         }
@@ -77,6 +86,10 @@
 
         &:last-of-type {
             max-width: 255px;
+
+            @include breakpoint(tablet) {
+                max-width: 45%;
+            }
 
             @include breakpoint(phone) {
                 max-width: 100%;
