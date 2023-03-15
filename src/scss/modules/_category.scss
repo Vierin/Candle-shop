@@ -1,0 +1,51 @@
+.category {
+    position: relative;
+    flex-basis: 100% / 3;
+
+    &__wrap {
+        display: flex;
+        gap: 30px;
+        color: $color-white;
+    }
+
+    &__img {
+        overflow: hidden;
+        height: 100%;
+        pointer-events: none;
+
+        img {
+            transition: transform 0.6s $easing;
+        }
+    }
+
+
+    &__desc {
+        position: absolute;
+        bottom: 50px;
+        padding: 0 50px;
+        z-index: 2;
+    }
+
+    &__link {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        @include hover {
+            & ~ .category__img img {
+                transform: scale(1.1);
+            }
+
+            & ~ .category__desc button {
+                &::after {
+                    transform: scaleX(0);
+                    transform-origin: right;
+                }
+
+                .button__text {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

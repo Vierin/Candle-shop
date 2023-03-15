@@ -23,12 +23,8 @@ export class Gallery {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     },
-                },
-                1024: {
-                    pagination: null,
-                    navigation: null
                 }
-              }
+            }
         });
     }
 

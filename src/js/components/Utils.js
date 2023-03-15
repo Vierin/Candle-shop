@@ -4,7 +4,6 @@ export class Utils {
     constructor() {
 
         this.init();
-        this.centerCards();
 
         // search
         document.querySelector('.js-search').addEventListener('click', () => {
@@ -33,15 +32,6 @@ export class Utils {
         [...document.querySelectorAll('button[data-lang]')].map(el => {
             el.addEventListener('click', () => document.documentElement.classList.remove('is-lang-change'))
         })
-    }
-
-    centerCards() {
-        // [...document.querySelectorAll('.cards--center')].map(el => {
-        //     const cards = el.querySelectorAll('.card');
-        //     const offset = +getComputedStyle(el.querySelector('.cards__wrap')).gap.replace('px', '');
-        //     const width = (cards[0].clientWidth + offset) * cards.length;
-        //     gsap.set(el.querySelector('.cards__wrap'), {width})
-        // })
     }
 
     clickHandler(el, className, event) {

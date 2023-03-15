@@ -13,6 +13,15 @@
         transform-origin: left;
     }
 
+    &--white {
+        border-color: $color-white;
+        width: fit-content;
+
+        &::after {
+            background: $color-white;
+        }
+    }
+
     &__text {
         position: relative;
         z-index: 3;
@@ -20,6 +29,12 @@
         color: $color-white;
         padding: 14px 28px;
         transition: color 0.5s $easing;
+        display: block;
+        text-align: center;
+
+        .button--white & {
+            color: $color-black;
+        }
 
         @include breakpoint(phone) {
             font-size: 13px;
@@ -36,6 +51,10 @@
 
         .button__text {
             color: $color-black;
+        }
+
+        &.button--white .button__text {
+            color: $color-white;
         }
     }
 }
